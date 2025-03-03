@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rating-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+    color: #fdcc0d;
+    font-size: 30px; 
+  }
+  
+  .rating-outer::before {
+    content: '\f006 \f006 \f006 \f006 \f006';
+  }
+  .rating-inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  .rating-inner::before{
+    content: '\f005 \f005 \f005 \f005 \f005';
+  }
+  .h-500{
+     height: 450px;
+  }
+  .w-500{
+    width: 450px;
+  }
+  .right-0{
+    right: 0px;
+  }
+  .pad{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+.w-450{
+  width: 450px;
+}
+.text-font{
+  font-size: 20px;
+}

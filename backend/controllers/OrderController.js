@@ -56,7 +56,7 @@ exports.myorder = asyncerror(async(req,res,next)=>{
     })
  })
 
-//Admin :get all order
+//Admin :get all order -- /api/v1/orders
 exports.orders=(asyncerror(async(req,res,next)=>{
     const orders = await Order.find();
     
@@ -72,7 +72,7 @@ exports.orders=(asyncerror(async(req,res,next)=>{
 }))
 
 //Admin:update order (order status,deliveredAt status and product stock decrement)
-//--
+//-- /api/v1/orders/677004da63a5117985aaa31f
 exports.updateOrder = asyncerror(async(req,res,next)=>{
     const updateorder = await Order.findById(req.params.id)
 
@@ -98,3 +98,16 @@ async function updatestock(productid,quantity){
     products.stock = products.stock - quantity;
     products.save({validateBeforeSave:false})
 }
+
+//admin: Delete order -- /api/v1/orders/677004da63a5117985aaa31f
+exports.deleteOrder = asyncerror(async(req,res,next)=>{
+     const deleteorder = await Order.findById(req.params.id);
+     if(!deleteorder){
+        return next(new Errorhandler(`order not found with this id:${req.params.id}`));
+     }
+     await deleteorder.deleteOne() 
+     res.status(200).json({
+        success:true,
+        message:"Order Has Been Deleted!"
+     })
+})
