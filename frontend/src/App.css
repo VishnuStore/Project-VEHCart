@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+.filter-rating-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+  color: #fdcc0d;
+  font-size: 30px; 
+}
+
+.filter-rating-outer::before {
+  content: '\f006';
+}
+.filter-rating-inner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+.filter-rating-inner::before{
+  content: '\f005 ';
+}
 .rating-outer {
     display: inline-block;
     position: relative;
@@ -40,8 +62,101 @@
     padding-bottom: 5px;
   }
 .w-450{
-  width: 450px;
+  width: 500px;
 }
 .text-font{
   font-size: 20px;
+}
+.text-align{
+  text-align: center;
+}
+.h-38{
+  height: 35rem;
+}
+.w-30{
+  width: 32%;
+}
+.m-75{
+  margin-left: 75px;
+  margin-right: 75px;
+}
+.align-items{
+  align-items: center;
+}
+.w-200{
+  width: 200px;
+}
+
+.checkout-progress {
+  clear: both;
+  margin: 20px auto;
+  width: auto;
+  font-family: sans-serif;
+  overflow: auto;
+}
+
+.step {
+  margin: 0;
+  border: 0;
+  letter-spacing: 1px;
+  line-height: 30px;
+  padding: 5px 10px 5px 15px;
+  color: grey;
+  text-decoration: none;
+  cursor: default;
+  font-weight: bold;
+  float: left;
+  height: auto;
+}
+
+.incomplete {
+  background: #eeeeee;
+}
+
+.active-step {
+  background: #fa9c23;
+  color: #fff;
+}
+
+.triangle-active {
+  float: left;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-left: 15px solid #fa9c23;
+  border-bottom: 20px solid transparent;
+  margin-left: -1px;
+}
+
+.triangle2-active {
+  width: 0;
+  float: left;
+  border-top: 20px solid #fa9c23;
+  border-left: 15px solid #fff;
+  border-bottom: 20px solid #fa9c23;
+  margin-right:-1px;
+}
+
+.triangle-incomplete {
+  float: left;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-left: 15px solid #eeeeee;
+  border-bottom: 20px solid transparent;
+  margin-left: -1px;
+}
+
+.triangle2-incomplete {
+  width: 0;
+  float: left;
+  border-top: 20px solid #eeeeee;
+  border-left: 15px solid #fff;
+  border-bottom: 20px solid #eeeeee;
+  margin-right: -1px;
+}
+.star {
+  display: inline;
+  list-style: none;
+  font-size: 3rem;
+  padding-left: 0.9rem;
+  color: #e3e3e3;
 }
